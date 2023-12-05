@@ -14,9 +14,14 @@ class BaseExercise:
     def load_data(self):
         file_to_read = self.data_path.joinpath(f"{self.name}.txt")
         logger.info(f"Reading file {file_to_read}")
-        with open(file_to_read, "r") as data_file:
-            self.text_data = data_file.read()
-            self.text_lines = self.text_data.splitlines()
+        try:
+            with open(file_to_read, "r") as data_file:
+                self.text_data = data_file.read()
+                self.text_lines = self.text_data.splitlines()
+        except FileNotFoundError:
+            logger.error(f"File {self.name}.txt not found")
+            exit(1)
+
 
 
     def calibration(self):

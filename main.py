@@ -1,4 +1,4 @@
-from exercises import Day1, Day1Two
+from exercises import Day1, Day1Two, Day2, Day2Two
 import logging
 
 logging.basicConfig(level=logging.INFO)
@@ -6,6 +6,7 @@ logger = logging.getLogger(__name__)
 
 
 if __name__ == '__main__':
-    day1 = Day1Two()
-    day1.load_data()
-    day1.execute_exercise()
+    problem = Day2Two()
+    problem.load_data()
+    problem.calibration()
+    problem.execute_exercise()
