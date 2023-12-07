@@ -1,6 +1,4 @@
 import functools
-import math
-
 from exercises.base_exercise import BaseExercise
 import logging
 
